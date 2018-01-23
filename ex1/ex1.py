@@ -50,13 +50,6 @@ X = data[:,0]; Y = data[:,1]    # feature and goal
 print X.shape
 m = X.shape[0]                     # number of training example
 
-# plot data 
-pl.plot(data[:,0], data[:,1], '*k')
-pl.xlabel('Population of City in 10,000s')
-pl.ylabel('Profit in $10,000a')
-pl.xlim(4,)
-pl.show()
-
 ############################################################
 # Implementation of Gradient Descent to determine hypothesis
 ############################################################
@@ -66,4 +59,13 @@ num_iters = 1500
 alpha = 0.01
 
 print "Cost: ", J_cost(X,Y,theta)
-print g_desc(X,Y, theta, alpha, num_iters)
+theta[0], theta[1] =  g_desc(X,Y, theta, alpha, num_iters)
+
+print "theta = ", theta
+# plot data 
+pl.plot(data[:,0], data[:,1], '*k')
+pl.plot(data[:,0], theta[0] + theta[1]*data[:,0], 'b-')
+pl.xlabel('Population of City in 10,000s')
+pl.ylabel('Profit in $10,000a')
+pl.xlim(4,)
+pl.show()
