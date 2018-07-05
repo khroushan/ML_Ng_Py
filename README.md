@@ -1,4 +1,4 @@
-# ML_Ng_Py
+# Machine Learning
 This repository includes many implementations of *Machine Learning*
 algorithms and practical techniques. The main part is developed exactly
 or around the assignment that has been given in Andrew Ng
