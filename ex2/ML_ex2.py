@@ -21,9 +21,9 @@ dn = data[data[:,2]==0,0:2]
 
 
 # Plot admitted and rejected student with different colors
-pl.plot(dp[:,0], dp[:,1], 'ko', label='admitted')
-pl.plot(dn[:,0], dn[:,1], 'b*', label='rejected')
-pl.legend()
+# pl.plot(dp[:,0], dp[:,1], 'ko', label='admitted')
+# pl.plot(dn[:,0], dn[:,1], 'b*', label='rejected')
+# pl.legend()
 
 ########################################
 def sigmoid(x):
@@ -100,6 +100,7 @@ def g_des(x,y,theta_int,alpha):
     """
     num_itr = 5000
     Jarr = np.zeros((num_itr), float)
+    theta = theta_int
     print(Jarr.shape)
     for it in range(num_itr):
         theta -= alpha*costGrad(x,y,theta)
@@ -140,3 +141,18 @@ print(res.x)
 #prediction for test of (45,85) = 0.776
 sigmoid(np.dot(res.x,np.array([1,45,85])))
 
+########################################
+x = data[:,0:2]
+y = data[:,2]
+theta = res.x
+x_pos = x[y==1,:]
+x_neg = x[y==0,:]
+pl.plot(x_pos[:,0], x_pos[:,1], 'ko', label='admitted')
+pl.plot(x_neg[:,0], x_neg[:,1], 'b*', label='rejected')
+pl.legend()
+x1_fit = np.linspace(min(x[:,0]), max(x[:,0]),100)
+x2_fit = (-1./theta[2])* (theta[1]*x1_fit + theta[0])
+pl.plot(x1_fit,x2_fit, 'r-')
+pl.xlim(min(x[:,0]), max(x[:,0]))
+pl.ylim(min(x[:,1]), max(x[:,1]))
+pl.show()
