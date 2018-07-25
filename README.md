@@ -12,3 +12,6 @@ List of topics:
 2. Classification and Logistic Regression
 3. Multi-class classification
 4. Neural Network
+5. Support Vector Machines (SVM)
+6. K-Mean Clustering
+7. Principal Component Analysis
