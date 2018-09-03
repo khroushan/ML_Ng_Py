@@ -1,11 +1,12 @@
 # Machine Learning
-This repository includes many implementations of *Machine Learning*
-algorithms and practical techniques. The main part is developed exactly
-or around the assignment that has been given in Andrew Ng
-Machine Learning course. Both jupyter notebooks and python
-version of each part is included. In each part I try to test
-my implementation from scratch against ML libraries such as
-`sklearn-kit` and `Pytorch`. 
+
+This repository includes many implementations of *Machine
+Learning* algorithms and practical techniques. The main part
+is developed around the assignment that has been given in
+Andrew Ng Machine Learning course. Both jupyter notebooks
+and python version of each part is included. In each section I
+try to test my implementation against ML
+libraries such as `sklearn-kit` and `Pytorch` if it is possible.
 
 List of topics:
 1. Linear Regression
